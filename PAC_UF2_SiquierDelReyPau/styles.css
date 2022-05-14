@@ -1,0 +1,250 @@
+/*Importar archivo de la fuente desde la carpeta. Hay sos para que funcione con cualquier navegador*/
+@font-face {
+  font-family: Autoslocos;
+  src: url('assets/font/RodfellowsWacky.woff') format('woff'),
+    url('assets/font/RodfellowsWacky.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/*Keyframes para nuestros efectos*/
+@keyframes progreso {
+  100% {
+    width: 300px;
+  }
+}
+/*El logo parpadea*/
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+  }
+  @-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+  }
+/*El coche de Pier se desplaza en la pagina de loading*/
+@-webkit-keyframes run {
+  0% {
+    left:0;
+    -webkit-transform:rotateY(180deg);
+ }
+ 50% {
+  left:75%;
+    -webkit-transform:rotateY(180deg);
+ }
+ 100% {
+  left:0;
+    -webkit-transform:rotateY(0deg);
+ }
+}  
+
+/*----------Web----------*/
+
+body, html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+.fondo {
+  background-image: url('assets/img/autoslocos_fondo.jpg');
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*-------Loading----------*/
+
+.logoLoading {
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+animation: blink 2s steps(2, start) infinite;
+-moz-animation: blink 2s steps(2, start) infinite;
+-o-animation: blink 2s steps(2, start) infinite;
+-webkit-animation: blink 2s steps(2, start) infinite;
+}
+
+.logoPierno {
+  margin: 0;
+  position: absolute;
+  bottom:-5px;
+  width: 30%;
+  -webkit-animation:linear infinite;
+  -webkit-animation-name:run;
+  -webkit-animation-duration:11s ;  
+}
+
+.textoLoading {
+  font-family: Autoslocos;
+  color:#f0e000;
+  font-size: 40px;
+  position: absolute;
+  top: 43%;
+  left: 40%;
+  text-shadow: 0 0 20px rgb(0, 0, 0);
+  }
+
+#barraLoading {
+  width: 300px;
+  height: 30px;
+  border: 7px solid #f0e000;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  box-shadow:0 0 50px rgb(0, 0, 0) ;
+  box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.501);
+}
+
+#InternoLoading {
+  width: 1px;
+  height: 30px;
+  background-color: rgb(108, 0, 196);
+  animation: progreso 5s linear;
+  top: 50%;
+  left: 40%;
+}
+
+/*--------inicio del juego--------------*/
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+
+select {
+  display: block;
+  left: 41.8%;
+  position: absolute;
+}
+
+#etiqueta {
+  font-family: Autoslocos;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0 0 20px rgb(0, 0, 0);
+  left:33%;
+}
+
+#participantes {
+  font-family: Autoslocos;
+  background-color: rgb(198, 129, 255);
+  border:solid 4px rgb(81, 0, 147);
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  color:white;
+  font-size: 30px;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  left:40.5%;
+}
+
+#inicio, #reiniciar {
+  font-family: Autoslocos;
+  letter-spacing: 2px;
+  background-color: rgb(198, 129, 255);
+  border:solid 4px rgb(81, 0, 147);
+  border-radius: 10px;
+  font-size: 40px;
+  margin-top:30px;
+  color:white;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  text-align: center;
+  transition: all .35s;
+  cursor: pointer;
+}
+
+#inicio {
+  width: 150px;
+  height: 80px;
+  top: 60%;
+  left: 44.8%;
+  position: absolute;
+}
+
+#reiniciar {
+  width: 250px;
+  height: 80px;
+  display: block;
+  position: fixed;
+  top: 60%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+}
+
+#inicio:hover, #reiniciar:hover   {
+  background-color: rgb(140, 0, 255);
+  border:solid 4px rgb(132, 0, 147);
+}
+
+/*---------juego---------*/
+
+.pista {
+  background-image: url(assets/img/meta.gif);
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.coche {
+  width: 79.5px;
+  display: block;
+}
+
+.carretera {
+  border-right: 15px solid rgb(132, 0, 147);
+  width: 95%;
+  background-image: url(assets/img/desierto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hide {
+  display: none !important;
+}
+
+#patan{
+  position: absolute;
+  margin-left: 65%;
+  top:57%;
+}
+
+#tabla {
+  font-family: Autoslocos;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 0 auto;
+  margin-left: 80%;
+  position: absolute;
+  bottom:2%;
+  border-collapse: collapse;
+  border-spacing: 1;
+  border-radius: 10px;
+  background:rgb(132, 0, 147);
+  overflow:hidden;
+}
+
+th {
+  padding: 10px;  
+}
+
+td {
+  text-align: center;
+  background: rgb(198, 129, 255);
+}
+
+

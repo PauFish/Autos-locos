@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los Autos Locos</title>
+  <link rel="shortcut icon" href="assets/img/iconopatan.gif" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <!--Fondo de pantalla-->
+  <div class="fondo">
+    <img class="logoLoading" src="assets/img/logoAutosLocos.gif" alt="Wacky Races Logo">
+    <div class="intro">
+      <img class="logoPierno" src="assets/img/piernodoyuna.gif" alt="Coche corriendo">
+      <div class="textoLoading">Loading...</div>
+      <div id='barraLoading'>
+        <div id='InternoLoading'></div>
+      </div>
+    </div>
+  <!--las imagenes de los coches-->
+    <div class="pista">
+      <div class="carretera">
+        <div class="coches">
+          <img src="assets/img/coche1.gif" class="coche hide" data-id="coche1">
+          <img src="assets/img/coche2.gif" class="coche hide" data-id="coche2">
+          <img src="assets/img/coche3.gif" class="coche hide" data-id="coche3">
+          <img src="assets/img/coche4.gif" class="coche hide" data-id="coche4">
+          <img src="assets/img/coche5.gif" class="coche hide" data-id="coche5">
+          <img src="assets/img/coche6.gif" class="coche hide" data-id="coche6">
+          <img src="assets/img/coche7.gif" class="coche hide" data-id="coche7">
+          <img src="assets/img/coche8.gif" class="coche hide" data-id="coche8">
+          <img src="assets/img/coche9.gif" class="coche hide" data-id="coche9">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--los botones-->
+  <div class="juego">
+    <div class="menu">
+      <div class="contenedorBotones">
+        <div id="patan"><img class="patanGif" src="assets/img/funny-puppy.gif" alt="Patan riendo"></div>
+        <button id="reiniciar" class="hide">Reiniciar</button>
+      </div>
+      <button id="inicio">Inicio</button>
+  <!--menu desplegable-->
+      <label id="etiqueta"><span>Numero de participantes</span>
+        <select id="participantes">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </label>
+    </div>
+  <!--la tabla-->
+    <div id="tabla" class="hide">
+      <table id="posiciones">
+        <thead>
+          <tr>
+            <th>Posicion</th>
+            <th>Coche</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <!--El archivo js-->
+  <script src="app.js"></script>
+</body>
+
+</html>
