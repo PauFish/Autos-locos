@@ -1,0 +1,85 @@
+
+body{
+  padding: 0;
+  margin: 0;
+  background: #565d5d;
+  background-size: cover;
+}
+h1{
+  color: red;
+  font-size: 40px;
+  font-family:   Arial, sans-serif;
+  text-align: center;
+}
+
+.contenedor_ruedas{
+display: flex; /*iniciamos flexbox*/
+flex-flow: row wrap; /*devino las filas y columnas todo en uno*/
+justify-content: space-between;/*espacio entre cada una de las fotos*/
+align-items: center;
+width: 80%;
+height:300px;
+margin: 0 auto;
+}
+
+.rotate_00 , .rotate_02 , .rotate_04, .rotate_01 , .rotate_03 {
+  height: 150px;
+}
+
+
+/*rotar imagen 00 */
+.rotate_00{
+  
+  -webkit-animation: spin 10s linear infinite;
+  -moz-animation: spin 10s linear infinite;
+  animation: spin 10s linear infinite;
+  /*al no poner el hover como antes conseguimos que rote siempre*/
+}
+/*rotar imagen1 */
+.rotate_01{-webkit-transition: -webkit-transform 2s;
+  /*Tiempo de rotacion: numero <2 rota mas rapido y >2rota mas despacio*/
+}
+.rotate_01:hover{
+  -webkit-transform: rotate(360deg) translateZ(0);
+  /*para que rote solo 360 y vuelva luego a la posicion inicial(0)*/
+}
+
+
+
+.rotate_02:hover{
+  -webkit-animation: spin 1.5s linear infinite;
+  -moz-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+  /*cada uno es para un navegador distinto
+  Tiempo de rotacion: numero <2 rota mas rapido y >2rota mas despacio*/
+}
+
+/*rotar imagen3 */
+.rotate_03{
+  -webkit-animation: spin 10s linear infinite;
+  -moz-animation: spin 10s linear infinite;
+  animation: spin 10s linear infinite;
+  animation-direction: reverse;
+  /*al no poner el hover como antes conseguimos que rote siempre*/
+}
+/*rotar imagen 4 */
+.rotate_04{
+  -webkit-transition: -webkit-transform 1s;
+  /*Tiempo de rotacion: numero <1 rota mas rapido y >1rota mas despacio*/
+}
+.rotate_04:hover{
+  -webkit-transform: rotate(180deg) translateZ(0);
+  /*para que rote solo 180 y vuelva luego a la posicion inicial(0)*/
+}
+
+/*Uso de keyframes*/
+@-webkit-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+@keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+    
