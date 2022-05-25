@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans', sans-serif
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    /*delimitamos el maximo permitido*/
+    margin: auto;
+    overflow: hidden;
+    /*si sale del contenedor lo esconde*/
+}
+
+.titulo {
+    color: #642a73;
+    font: size 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 600px;
+    /* fallback for old browsers */
+    background: #bc4e9c;
+    /* https://uigradients.com/#Shifter para el gradiente del background */
+    background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.609), hsla(317, 45%, 52%, 0.548)), url(../img/portada.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ y añado url(../img/portada.jpg)  */
+    /*y añado url(../img/portada.jpg) sobre los colores apretamos arriba de la ventana y le damos un 60% de transparencia bajando la barra derecha */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* barra navegacion*/
+
+nav {
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav>a {
+    /* > es el selector de hijos directos y no al resto de nav */
+    color: #fff;
+    font-weight: 300;
+    /*grosor de la fuente/mas ligera*/
+    text-decoration: none;
+    /*quita subrayado abajo*/
+    margin-right: 10px;
+    /*separa uno del otro 8inicio acerca de portafolio...*/
+}
+
+nav>a:hover {
+    /* hover=al pasar por encima con el raton */
+    text-decoration: underline;
+    /* subrayado abajo*/
+}
+
+header .textos-header {
+    /*centrar el texto de Potencia tus ventas*/
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    /*centra el texto en el centro*/
+    justify-content: center;
+    flex-direction: column;
+    /* se pone un texto abajo del otro*/
+    text-align: center;
+}
+
+.textos-header h1 {
+    /*color y tamaño del texto central  superior del header*/
+    font-size: 50px;
+    color: #fff;
+}
+
+.textos-header h2 {
+    /*color y tamaño del texto central  del header*/
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+}
+
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    /*pasa a la parte inferior en este caso del header*/
+    width: 100%;
+}
+
+/*about us*/
+main .sobre-nosotros{/*juntamos la ola un poco a "nuestro producto"*/
+    padding: 30px 0 60px 0;
+}
+
+.contenedor-sobre-nosotros {
+    /*los mejores prodcutos a la derecha*/
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imagen-about-us {
+    /*tamaño foto de las ventanas y el hombre*/
+    width: 48%;
+}
+
+.sobre-nosotros .contenedor-textos {
+    /*los mejores productos tamaño*/
+    width: 48%;
+}
+
+.contenido-textos h3 {
+    margin-bottom: 15px;
+}
+
+.contenido-textos h3 span {
+    background: #4d0686;
+    color: #fff;
+    border-radius: 50%;
+    /*para ser redondo*/
+    display: inline-block;
+    /*propiedad de bloque*/
+    text-align: center;
+    width: 30px;
+    /*alto y ancho del cuadrado, que es un circulo pero antes fue cuadrado y si solo pongo el widht saldria ovalado*/
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 5);
+    margin-right: 5px;
+    /* separar la bolita del texto "los mejores productos"*/
+}
+
+.contenido-textos p {
+    padding: 0px 0px 30px 15px;
+    /*respirar el lorem largo*/
+    font-weight: 300;
+    text-align: justify;
+}
+
+/*galeria*/
+
+.portafolio {
+    background: #f2f2f2;
+}
+
+.galeria-port {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /*si no lo ponemos se junta todo en una imagen y no salen todas*/
+}
+
+.imagen-port {
+    width: 24%;
+    margin-bottom: 10px;
+    /*las imagenes aparecen en columnas*/
+    /*mejoramos luego de introducir >img mas abajo poniendo sombras */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-port>img {
+    /*las imagenes aparecen cuadradas*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.hover-galeria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /*colocamos el target dentro de las imagenes*/
+    transform: scale(0);
+    /*lo uteamos mientras ponemos las siguientes condiciones apra ver como queda*/
+    background: hsla(273, 91%, 27%, 0.7);
+    /*escalamos para hacer la transicion de aparecer el target lila*/
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*centramos el target*/
+}
+
+.hover-galeroa img {
+    width: 50px;
+}
+
+.hover-galeroa img p {
+    color: #fff;
+}
+
+.imagen-port:hover .hover-galeria {
+    /*cuando tengasd el hover quiero que el hovergaleria haga el efecto*/
+    transform: scale(01);
+}
+
+/* Client */
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card {
+    background: #4d0686;
+    display: flex;
+    width: 46%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card>.contenido-texto-card {
+    /*color a la letra*/
+    width: 60%;
+    color: #fff;
+}
+
+.cards .card>.contenido-texto-card p {
+    /*para la <p> mas clara y arriba espaciado*/
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/* owr team*/
+
+.about-service {
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+.servicio-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-ind {
+    width: 28%;
+    text-align: center;
+}
+
+.servicio-ind img {
+    width: 90%
+}
+
+.servicio-ind h3 {
+    margin: 10px 0;
+}
+
+.servicio-ind p {
+    font-weight: 300;
+    text-align: justify;
+}
+
+/*footer*/
+
+
+footer {
+    background: #414141;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #fff;
+    border-bottom: 3px solid #af20d3;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p {
+    color: #ccc;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+
+/*adaptar para telefonos y tablets */
+
+@media screen and (max-width:900px) {
+    /*modifica apariencia si pantalla es menor 900px)*/
+    header {
+        background-position: center;
+    }
+
+    .contenedor-sobre-nosotros {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sobre-nosotros .contenido-textos {
+        width: 90%;
+    }
+
+    .imagen-about-us {
+        width: 90%;
+    }
+
+    /* Galeria Portafolio */
+
+    .imagen-port {
+        width: 44%;
+        /*dos imagenes por fila*/
+    }
+
+    /* Clientes */
+
+    .cards {
+        flex-direction: column; /*pasa a estar una abjo de la otra*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card {
+        /*ajustar tarjetas*/
+        width: 90%;
+    }
+
+    .cards .card:first-child {
+        /*para que se separen*/
+        margin-bottom: 30px;
+    }
+
+    /* servicios */
+
+    .servicio-cont {
+        /*los hace en columna*/
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .servicio-ind {
+        /*rellenar la pantalla*/
+        width: 100%;
+        text-align: center;
+    }
+
+    .servicio-ind:nth-child(1),
+    .servicio-ind:nth-child(2) {
+        /*el primer elemento y el segundo ponemos margen inferior pero no tercero*/
+        margin-bottom: 60px;
+    }
+
+    .servicio-ind img { /*adapto tamaño imagen*/
+        width: 90%;
+    }
+}@media screen and (max-width:500px){/*pantallas pequeñas*/
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* ABOUT US */
+
+    .imagen-about-us{
+        margin-bottom: 60px;
+        width: 99%;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 95%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 95%;
+    }
+
+    /* Clients */
+
+    .cards .card{
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards .card img{
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Footer */
+
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final{
+        font-size: 20px;
+    }
+}
