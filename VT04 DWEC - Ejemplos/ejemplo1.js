@@ -1,9 +1,28 @@
-var tamano =  document.getElementById('tamano').innerHTML;
+function ejecuta() {
+	var a = "20";
+	var b = 20.0;
 
-for (var i = 0; i < tamano; i++) {
-	// document.getElementsByTagName('ul') -> Devuelve una lista con todos los elementos ul del documento.
-	document.getElementsByTagName('ul')[0].innerHTML += "<li>Creo el elemento " + i + "</li>"; 
+	console.log("Condicionales: ")
+	if (a == b){
+		console.log("Son iguales")
+	}
+	if (a === b){
+		console.log("Son iguales y del mismo tipo")
+	} else {
+		console.log("Son iguales pero de otro tipo")
+	}
+
+	console.log("Operaciones del mismo tipo:");
+	var suma = a + 2; // Dos Number
+	console.log(suma);
+	var suma = b + "patitos"; // Dos String
+	console.log(suma); // Suma cambia de tipo pero no hay que especificarlo
+	console.log("Operaciones de distinto tipo:");
+	console.log(a + b); // Number + String
+
+	console.log("Comienzo del bucle:");
+	for (var i = 0; i < 10; i++) {
+		a = a + i;
+		console.log(a);
+	}
 }
-
-document.getElementsByTagName("li")[5].style.backgroundColor = "red";
-

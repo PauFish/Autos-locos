@@ -1,18 +1,44 @@
-// Crea una lista con todos los elementos td.
-var listaDeValores = document.getElementsByTagName('td') 
+function ejecuta() {
+	var a = "10";
+	var b = 10;
+	var c = 10.0;
 
-var resultado = 0;
+	console.log ("Compruebo si 10 es igual a 10.0")
+	if (b == c) {
+		console.log("Son iguales");
+	} else {
+		console.log("Son distintos")
+	}
 
-for (var i = 0; i < listaDeValores.length; i++) {
-	// Imprime todos los elementos td
-	console.log(listaDeValores[i]); 
+	// Enteros y Float son de tipo Number
 
-	// Convierte el contenido de cada td en entero y los va sumando. Prueba a quitar el parseInt.
-	resultado = resultado + parseInt(listaDeValores[i].innerHTML); 
-	// resultado = resultado + listaDeValores[i].innerHTML;
+	if (b === c) {
+		console.log("Son iguales y del mismo tipo");
+	} else {
+		console.log("Son iguales pero de otro tipo")
+	}
+
+
+	// Un bucle que añade a "a" un "0" por cada valor que tenga "b"
+	while (b > 0) {
+		a = a + "0";
+		b = b - 1;
+		console.log(a);
+	}
+
+	// Un switch nos permite controlar diferentes condiciones
+	switch(c) {
+		case 10:
+			console.log("Vale 10"); // Sin el break, entra en el siguiente caso
+		case 9:
+			console.log("Vale 9");
+			break; // El break nos saca del switch
+		case 8:
+			console.log("Vale 8");
+			break
+		default: // Para cualquier otro caso
+			console.log("Es otra cosa");	
+	}
+
 }
-
-// Imprime el resultado de la suma, lo convierte a cadena de caracteres y nos devuelve cuantos caracteres tiene el resultado.
-console.log("El resultado final es " + resultado + " y tiene " + String(resultado).length + " caracteres."); 
-
 
