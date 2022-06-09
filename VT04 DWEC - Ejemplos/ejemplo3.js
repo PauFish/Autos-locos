@@ -1,57 +1,27 @@
-// Añadimos funcionalidad al primer boton
-document.getElementsByTagName('button')[0].onclick = function() {
-															// Cogemos el valor del input
-															let entrada = document.getElementsByTagName('input')[0].value;
-															crearLista(entrada);
-														};
+var botonInsertar = document.getElementById('insertar'); // Selecciono el elemento "insertar"
+var contenidoCampoTexto = document.getElementsByTagName('input')[0]; // Selecciono el input
+var textoFijo = document.getElementsByClassName('insertado')[0]; // Selecciono el "insertado"
 
+botonInsertar.onclick = function() {
+							textoFijo.innerHTML = contenidoCampoTexto.value;
+						};
 
-// Definimos la función que crea la lista en pantalla.
-var objetivo = document.getElementById('resultado');
+grande.onclick = function() { // En Js puedo llamar directamente a los elementos por su ID, sin tener que hacer el getElementByID
+					var tamano = textoFijo.style.fontSize; // Cojo su valor "200%"
+					tamano = tamano.substring(0, tamano.length - 1); // Elimino el % 
+					tamano = parseInt(tamano) + 5; // Lo paso a entero y le sumo 5
+					tamano = tamano + "%"; // Le vuelvo a añadir el %
+					textoFijo.style.fontSize = tamano; // Lo guardo en la propiedad
+					console.log(tamano); // Lo muestro por consola
+				};
 
-function crearLista(repeticiones) {
-	console.log("Genero la lista");
-	// Iniciamos el elemento lista.
-	objetivo.innerHTML = "<ol>";
-	// Creamos tantos elementos en la lista como se hayan instroducido.
-	for (var i = 0; i < repeticiones; i++) {
-		// Genero un número entero aleatorio.
-		let numero = parseInt(Math.random() * 10);
-		// Creo el elemento.
-		objetivo.innerHTML += "<li>" + String(numero) + "</li>";
-	}
-	// Cierro la lista.
-	objetivo.innerHTML += "</ol>";
+pequeno.onclick = function() {
+					var tamano = textoFijo.style.fontSize;
+					tamano = tamano.substring(0, tamano.length - 1);
+					tamano = parseInt(tamano) - 5;
+					tamano = tamano + "%";
+					textoFijo.style.fontSize = tamano;
+					console.log(tamano);
+				};
 
-	// Selecciono todos los elementos li creados. Tiene que definirse aquí porque hasta este momento no existen.
-	let elementosCreados = document.getElementsByTagName('li');
-	
-	// Función que hace que si un elemento es par, le añade la clase "rojo"
-	function cambiaColorSiEsPar(elemento) {
-		if (parseInt(elemento.innerHTML) % 2 == 0) {
-			console.log("cambia");
-			elemento.classList.add("rojo"); // Las clases es una lista de valores con todas las clases que tiene un elemento.
-		}
-	}	
-
-
-	// Recorro todos los elementos <li> y les cambia la clase si es necesario.
-	for (var i = 0; i < elementosCreados.length; i++) {
-		cambiaColorSiEsPar(elementosCreados[i]);
-	}
-
-	// Una vez cambiada la clase, inicializamos el otro botón con una función anónima.
-	document.getElementById('colorear').onclick = function() {
-														console.log("Ejecuta");
-														// Saco en una lista todos los elementos con la clase "rojo"
-														let listaRojos = document.getElementsByClassName("rojo");
-														// Los recorro y les voy cambiando el fondo.
-														for (var i = 0; i < listaRojos.length; i++) {
-															listaRojos[i].style.backgroundColor = "red";
-														}
-		
-	}
-
-}
-
-
+				
