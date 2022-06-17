@@ -1,0 +1,43 @@
+function crearListaDesdeNumero(valor) {
+	let lista = new Array();
+	for (var i = 0 ; i < valor; i++) {
+		lista[i] = i;
+	}
+
+	return lista;
+}
+
+function crearListaDesdeCadena(cadena) {
+	let lista = new Array();
+	for (var i = 0 ; i < cadena.length; i++) {
+		lista[i] = cadena[i];
+	}
+
+	return lista;
+}
+
+
+document.getElementsByTagName("button")[0].onclick = function() {
+
+														// Cojo la palabra y el número
+														var palabra = document.getElementsByTagName('input')[0].value;														
+														var numero = document.getElementsByTagName("input")[1].value;
+														
+														// Actualizo el texto indicando qué caracter está en esa posición
+														posicion.innerHTML = numero;
+														caracter.innerHTML = palabra[numero-1];	
+
+														// Si el número de caracteres de la palabra y el número coinciden, construyo una tabla
+														if (crearListaDesdeCadena(palabra).length == crearListaDesdeNumero(numero).length) {
+															listaLetras = crearListaDesdeCadena(palabra);
+															listaNumeros = crearListaDesdeNumero(numero);
+															for (var i = 0 ; i < numero; i++) {
+																resultado.innerHTML += "<tr><td>" + listaNumeros[i] + "</td><td>" + listaLetras[i] + "</td></tr>";
+															}
+														}
+													}
+
+
+
+
+
