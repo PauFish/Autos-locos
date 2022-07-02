@@ -1,0 +1,70 @@
+class ListaCompra {
+	constructor(donde) {
+		this.donde = donde;
+		this.listaProductos = [];
+		this.comprador = "";
+	};
+
+	get cantidadProductos() {
+		return this.listaProductos.length;
+	};
+
+	anadirProducto(producto) {
+		this.listaProductos.push(producto);
+		console.log(this.listaProductos);
+	};
+
+	set indicaComprador(nombre){
+		this.comprador = nombre.toUpperCase();
+	};
+
+	imprimeCompra(){
+		this.donde.innerHTML = "La compra de " + this.comprador + " es " + this.listaProductos;
+	};
+
+	borrarProducto(nombre){
+		var posicion = this.listaProductos.indexOf(nombre);
+		this.listaProductos.splice(posicion, 1);
+		console.log("Se ha borrado un producto");
+		// Este método borra el producto que le pasamos como parámetro, pero si no existe, borra el siguiente al último borrado
+	}
+};
+
+
+var salida = document.getElementsByTagName("p")[1];
+
+var lista = new ListaCompra(salida);
+
+var botones = document.getElementsByTagName("button");
+
+// Aplicamos esta funcionalidad a todos los botones menos al ultimo
+for (var i = 0; i < botones.length-1; i++) {
+	botones[i].onclick = function() {
+							document.getElementsByTagName("ol")[0].innerHTML += "<li>" + this.innerHTML + "</li>";
+							lista.anadirProducto(this.innerHTML);
+
+							// Busco todos los elementos <li> que tenga el documento y les añado la función para borrar el contenido
+							var listaProductosComprados = document.getElementsByTagName("li");
+
+							for (var j = 0; j < listaProductosComprados.length; j++) {
+											listaProductosComprados[j].onclick = function() {
+																						lista.borrarProducto(this.innerHTML);
+																				}
+							}
+
+							// Esto hace que, cada vez que añadamos un producto, se actualice la función en TODOS los <li>.
+							// Se podría hacer sin el bucle, utilizando
+						};
+}
+
+
+
+
+
+document.getElementsByTagName('button')[botones.length-1].onclick = function() {
+																		var usuario = document.getElementsByTagName('input')[0].value;
+																		// Usamos el setter para establacer el valor
+																		lista.indicaComprador = usuario;
+																		lista.imprimeCompra();
+																		console.log(lista.comprador);
+																	};
