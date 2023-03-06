@@ -1,3 +1,1 @@
-# Autos-locos
-pac de autos locos
-OJO La profesora no lo queria Responsive asi que lo dejé sin...
+School code
